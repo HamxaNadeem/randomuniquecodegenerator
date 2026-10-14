@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Wash It Clean</string>
+    <string name="tagline">Blast the dirt. Reveal the shine.</string>
+    <string name="coins_format">💰 %1$d</string>
+    <string name="play_level">Play level %1$d: %2$s</string>
+    <string name="shop">Nozzle shop</string>
+    <string name="privacy_settings">Privacy settings</string>
+    <string name="level_title">Level %1$d · %2$s</string>
+    <string name="percent_format">%1$d%% clean</string>
+    <string name="nozzle_format">Nozzle: %1$s</string>
+    <string name="level_clean_title">Sparkling clean! ✨</string>
+    <string name="level_clean_message">You earned %1$d coins.</string>
+    <string name="watch_ad_bonus">Watch ad: get %1$d</string>
+    <string name="next_level">Next level</string>
+    <string name="free_coins">Watch ad: +%1$d coins</string>
+    <string name="nozzle_stats">Size %1$d · Power %2$d</string>
+    <string name="buy_format">Buy 💰 %1$d</string>
+    <string name="select">Use</string>
+    <string name="selected">In use</string>
+    <string name="not_enough_coins">Not enough coins yet. Keep washing!</string>
+    <string name="back">Back</string>
+</resources>
