@@ -1,0 +1,10 @@
+<resources>
+    <color name="brand">#0288D1</color>
+    <color name="brand_dark">#01579B</color>
+    <color name="accent">#FFB300</color>
+    <color name="background">#E3F2FD</color>
+    <color name="play_area">#CFD8DC</color>
+    <color name="text_primary">#102A43</color>
+    <color name="text_secondary">#486581</color>
+    <color name="launcher_background">#29B6F6</color>
+</resources>
