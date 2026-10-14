@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.hamxanadeem.blockygems.ui.BackgroundView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.hamxanadeem.blockygems.ui.GameView
+            android:id="@+id/gameView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/board_description" />
+
+        <ImageButton
+            android:id="@+id/homeButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="top|end"
+            android:layout_margin="12dp"
+            android:background="@drawable/bg_round_button"
+            android:contentDescription="@string/home"
+            android:src="@drawable/ic_home" />
+
+        <FrameLayout
+            android:id="@+id/gameOverOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/scrim"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/gameOverCard"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_panel"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/game_over_title"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="26sp" />
+
+                <TextView
+                    android:id="@+id/newBestText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/new_best"
+                    android:textColor="@color/gold"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/score_label"
+                    android:textColor="@color/text_soft"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/finalScoreText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="56sp" />
+
+                <TextView
+                    android:id="@+id/gameOverBestText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="@color/gold"
+                    android:textSize="16sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/reviveButton"
+                    style="@style/GameButton"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/bg_button_revive"
+                    android:text="@string/revive" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/playAgainButton"
+                    style="@style/GameButton"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/bg_button_play"
+                    android:text="@string/play_again" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/homeFromGameOverButton"
+                    style="@style/GameButton"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/bg_button_secondary"
+                    android:text="@string/home" />
+            </LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+</FrameLayout>

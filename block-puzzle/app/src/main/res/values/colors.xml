@@ -1,0 +1,7 @@
+<resources>
+    <color name="night">#FF1B1A5C</color>
+    <color name="launcher_background">#FF2A1260</color>
+    <color name="gold">#FFFFD54F</color>
+    <color name="text_soft">#CCFFFFFF</color>
+    <color name="scrim">#CC0B0820</color>
+</resources>
