@@ -1,0 +1,54 @@
+name: Blocky Gems CI
+
+on:
+  push:
+    branches: ['**']
+    paths: ['block-puzzle/**', 'gradle/wrapper/**', '.github/workflows/blocky-gems-ci.yml']
+  pull_request:
+    paths: ['block-puzzle/**', 'gradle/wrapper/**', '.github/workflows/blocky-gems-ci.yml']
+
+concurrency:
+  group: blocky-gems-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Test, lint and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Unit tests (game rules)
+        run: ./gradlew -p block-puzzle coreTest --stacktrace
+
+      - name: Android lint
+        run: ./gradlew -p block-puzzle :app:lintDebug --stacktrace
+
+      - name: Build debug APK and release bundle
+        # Uses Google's test ad IDs and is unsigned; real releases use blocky-gems-release.yml.
+        run: ./gradlew -p block-puzzle :app:assembleDebug :app:bundleRelease --stacktrace
+
+      - name: Upload debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: blocky-gems-debug-apk
+          path: block-puzzle/app/build/outputs/apk/debug/*.apk
+          retention-days: 14
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: blocky-gems-reports
+          path: |
+            block-puzzle/core/build/reports/
+            block-puzzle/app/build/reports/
+          retention-days: 7

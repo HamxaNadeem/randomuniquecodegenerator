@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Blocky Gems</string>
+    <string name="play">PLAY</string>
+    <string name="continue_game">CONTINUE</string>
+    <string name="new_game">New game</string>
+    <string name="best_format">👑 Best %1$d</string>
+    <string name="sound">Sound</string>
+    <string name="vibration">Vibration</string>
+    <string name="home">Home</string>
+    <string name="privacy_settings">Privacy settings</string>
+    <string name="game_over_title">No more moves!</string>
+    <string name="score_label">SCORE</string>
+    <string name="new_best">★ NEW BEST! ★</string>
+    <string name="revive">▶  Revive (watch ad)</string>
+    <string name="play_again">Play again</string>
+    <string name="board_description">Game board. Drag gem pieces from the tray onto the board to fill rows and columns.</string>
+</resources>
